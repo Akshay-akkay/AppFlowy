@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:appflowy_editor/appflowy_editor.dart';
 import 'package:appflowy_editor/src/infra/clipboard.dart';
 import 'package:appflowy_editor/src/infra/html_converter.dart';
@@ -192,11 +194,13 @@ void _handlePaste(EditorState editorState) async {
   AppFlowyClipboardData? data;
   try {
     data = await AppFlowyClipboard.getData();
-  } catch (e) {
+  } catch (e, s) {
     Log.keyboard.debug('paste error: $e');
+    log(e.toString(), stackTrace: s);
   }
 
   if (data == null) {
+    debugPrint('paste error: data is null');
     return;
   }
 
