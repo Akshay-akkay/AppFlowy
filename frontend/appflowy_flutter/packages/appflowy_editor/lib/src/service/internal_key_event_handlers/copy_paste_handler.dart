@@ -201,14 +201,14 @@ void _handlePaste(EditorState editorState) async {
   }
 
   if (editorState.cursorSelection?.isCollapsed ?? false) {
-    _pastRichClipboard(editorState, data);
+    _pastRichClipboard(editorState, data!);
     return;
   }
 
   _deleteSelectedContent(editorState);
 
   WidgetsBinding.instance.addPostFrameCallback((_) {
-    _pastRichClipboard(editorState, data);
+    _pastRichClipboard(editorState, data!);
   });
 }
 
