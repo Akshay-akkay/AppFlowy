@@ -1,4 +1,5 @@
 import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart';
 
 import 'package:rich_clipboard/rich_clipboard.dart';
 
@@ -40,7 +41,7 @@ class AppFlowyClipboard {
 
     // https://github.com/BringingFire/rich_clipboard/issues/13
     // Remove all the fragment symbol in Windows.
-    if (Platform.isWindows && html != null) {
+    if (!kIsWeb) if (Platform.isWindows && html != null) {
       html = html
           .replaceAll('<!--StartFragment-->', '')
           .replaceAll('<!--EndFragment-->', '');
