@@ -191,18 +191,7 @@ void _pasteMultipleLinesInText(
 }
 
 void _handlePaste(EditorState editorState) async {
-  AppFlowyClipboardData? data;
-  try {
-    data = await AppFlowyClipboard.getData();
-  } catch (e, s) {
-    Log.keyboard.debug('paste error: $e');
-    log(e.toString(), stackTrace: s);
-  }
-
-  if (data == null) {
-    debugPrint('paste error: data is null');
-    return;
-  }
+  final data = await AppFlowyClipboard.getData();
 
   if (editorState.cursorSelection?.isCollapsed ?? false) {
     _pastRichClipboard(editorState, data!);
