@@ -84,7 +84,7 @@ class ImageNodeBuilder extends NodeWidgetBuilder<Node>
     ];
   }
 
-  Alignment _textToAlignment(String text) {
+  Alignment _textToAlignment(String? text) {
     if (text == 'left') {
       return Alignment.centerLeft;
     } else if (text == 'right') {
