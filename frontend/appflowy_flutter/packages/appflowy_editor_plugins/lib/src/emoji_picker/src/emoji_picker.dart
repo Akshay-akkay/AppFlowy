@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -237,6 +238,10 @@ class EmojiPickerState extends State<EmojiPicker> {
   // Check if emoji is available on current platform
   Future<Map<String, String>?> _getPlatformAvailableEmoji(
       Map<String, String> emoji) async {
+    if (kIsWeb) {
+      return emoji;
+    }
+
     if (Platform.isAndroid) {
       Map<String, String>? filtered = {};
       var delimiter = '|';
