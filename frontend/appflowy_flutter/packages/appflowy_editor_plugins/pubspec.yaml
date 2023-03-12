@@ -6,19 +6,22 @@ homepage: https://github.com/AppFlowy-IO/AppFlowy
 publish_to: none
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
-  flutter: ">=3.3.0"
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.0'
 
 dependencies:
   flutter:
     sdk: flutter
   appflowy_editor:
-    path: ../appflowy_editor
-  flowy_infra: 
+    git:
+      url: https://github.com/Akshay-akkay/AppFlowy.git
+      ref: c8e4de60015824f03f94e7bcf4ecbe01afc1609b
+      path: frontend/appflowy_flutter/packages/appflowy_editor
+  flowy_infra:
     path: ../flowy_infra
   flowy_infra_ui:
     path: ../flowy_infra_ui
-  appflowy_popover: 
+  appflowy_popover:
     path: ../appflowy_popover
   flutter_math_fork: ^0.6.3+1
   highlight: ^0.7.0
@@ -36,7 +39,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # To add assets to your package, add an assets section, like this:
   assets:
     - assets/images/
