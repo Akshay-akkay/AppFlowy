@@ -35,9 +35,7 @@ class ImageNodeBuilder extends NodeWidgetBuilder<Node>
 
   @override
   NodeValidator<Node> get nodeValidator => ((node) {
-        return node.type == 'image' &&
-            node.attributes.containsKey('image_src') &&
-            node.attributes.containsKey('align');
+        return node.type == 'image' && node.attributes.containsKey('image_src');
       });
 
   @override
