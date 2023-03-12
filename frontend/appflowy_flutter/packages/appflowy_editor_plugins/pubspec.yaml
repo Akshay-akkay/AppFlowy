@@ -15,14 +15,25 @@ dependencies:
   appflowy_editor:
     git:
       url: https://github.com/Akshay-akkay/AppFlowy.git
-      ref: c8e4de60015824f03f94e7bcf4ecbe01afc1609b
+      ref: f4512e761e92de0251b8609d1290a35d09d3d9db
       path: frontend/appflowy_flutter/packages/appflowy_editor
   flowy_infra:
-    path: ../flowy_infra
+    git:
+      url: https://github.com/Akshay-akkay/AppFlowy.git
+      ref: f4512e761e92de0251b8609d1290a35d09d3d9db
+      path: frontend/appflowy_flutter/packages/flowy_infra
+
   flowy_infra_ui:
-    path: ../flowy_infra_ui
+    git:
+      url: https://github.com/Akshay-akkay/AppFlowy.git
+      ref: f4512e761e92de0251b8609d1290a35d09d3d9db
+      path: frontend/appflowy_flutter/packages/flowy_infra_ui
   appflowy_popover:
-    path: ../appflowy_popover
+    git:
+      url: https://github.com/Akshay-akkay/AppFlowy.git
+      ref: f4512e761e92de0251b8609d1290a35d09d3d9db
+      path: frontend/appflowy_flutter/packages/appflowy_popover
+
   flutter_math_fork: ^0.6.3+1
   highlight: ^0.7.0
   shared_preferences: ^2.0.15
