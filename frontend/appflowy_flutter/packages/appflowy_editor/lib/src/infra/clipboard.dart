@@ -20,7 +20,7 @@ class AppFlowyClipboard {
     // https://github.com/BringingFire/rich_clipboard/issues/13
     // Wrapping a `<html><body>` tag for html in Windows,
     //  otherwise it will raise an exception
-    if (Platform.isWindows && html != null) {
+    if (!kIsWeb) if (Platform.isWindows && html != null) {
       if (!html.startsWith('<html><body>')) {
         html = '<html><body>$html</body></html>';
       }
